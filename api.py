@@ -30,6 +30,7 @@ def index():
 def impasta():
       return "Nice. finally someone understand my name!<br>finall step is here. send a post request to a grandchild of skillup called CyberSec and write this in the request body : <b>'{\"Sk_team_name\":\"YOURTEAMNAME\"}'</b> <br >be careful . you must replace the <b>YOURTEAMNAME</b> part with your team name. just choose one .<br>you must use <b>WeArePinkHats: False and Content-Type: application/json</b> in the header."
 
+
 @app.post("/skillup/cybersec")
 async def cybersec(body: teamname,request=Request,WeArePinkHats: str =Header(None)):
     validate=WeArePinkHats
