@@ -28,7 +28,7 @@ def index():
 
 @app.get('/skillup/impasta',response_class=HTMLResponse)
 def impasta():
-      return "Nice. finally someone understand my name!<br>finall step is here. send a post request to a grandchild of skillup called CyberSec and write this in the request body : <b>'{\"Sk_team_name\":\"YOURTEAMNAME\"}'</b> <br >be careful . you must replace the <b>YOURTEAMNAME</b> part with your team name. just choose one .<br>you must use <b>WeArePinkHats: False and Content-Type: application/json</b> in the header."
+      return "Nice. finally someone understand my name!<br>finall step is here. send a post request to a child of skillup called CyberSec and write this in the request body : <b>'{\"Sk_team_name\":\"YOURTEAMNAME\"}'</b> <br >be careful . you must replace the <b>YOURTEAMNAME</b> part with your team name. just choose one .<br>you must use <b>WeArePinkHats: False and Content-Type: application/json</b> in the header."
 
 
 @app.post("/skillup/cybersec")
@@ -38,7 +38,7 @@ async def cybersec(body: teamname,request=Request,WeArePinkHats: str =Header(Non
     if validate=='False':
         newteam=teamname(sk_team_name=body.sk_team_name)
         newteam.save()
-        return newteam
+        return "Well Done! now, write the PK to one of the staf  "+ newteam
     else: return "bad bad bad"
 if __name__=="__main__":
        uvicorn.run("api:app",host="127.0.0.1",port=8000, reload=True)
