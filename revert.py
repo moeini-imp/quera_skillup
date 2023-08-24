@@ -1,0 +1,14 @@
+def reverse_hex(hex_string):
+    # Remove any spaces or non-hex characters
+    hex_string = hex_string.replace(" ", "").replace("\n", "")
+
+    # Reverse the pairs of characters
+    reversed_hex = "".join(hex_string[i:i+2][::-1] for i in range(0, len(hex_string), 2))
+
+    return reversed_hex
+
+# Example input
+hex_string = "676f20746f20352e3136312e3135372e3739207768657265207573696e6720706f727420383030302e2074686520352e3136312e3135372e3739206861732061206368696c642063616c6c656420736b696c6c757020616e642074686520736b696c6c7570206861732061206368696c642063616c6c6564206368616c6c656e67652e0d0a736f20746865206368616c6c656e67652069732061206772616e646368696c64206f6620352e3136312e3135372e37392e2064696420796f75207365652074686973203f0d0a"
+
+reversed_hex = reverse_hex(hex_string)
+print("Reversed Hex:", reversed_hex)

@@ -22,7 +22,7 @@ class teamname(HashModel):
         database = redis
 Migrator().run()
 app=FastAPI()
-@app.get('/skillup/challange',response_class=HTMLResponse)
+@app.get('/skillup/challenge',response_class=HTMLResponse)
 def index():
     return "Congrats! you found me. now its time to recievd a new hint! you must send a Get request to another address to find the true authentication keys. this new route is a child of skillup in the last quest. the name cames after a joke.<br> <b>'What do you call a fake noodle?'</b> <br>the answer is the name."
 
@@ -38,7 +38,7 @@ async def cybersec(body: teamname,request=Request,WeArePinkHats: str =Header(Non
     if validate=='False':
         newteam=teamname(sk_team_name=body.sk_team_name)
         newteam.save()
-        return "Well Done! now, write the PK to one of the staf  "+ newteam
+        return "Well Done! now, write the PK to one of the staff  "+ newteam
     else: return "bad bad bad"
 if __name__=="__main__":
        uvicorn.run("api:app",host="127.0.0.1",port=8000, reload=True)
